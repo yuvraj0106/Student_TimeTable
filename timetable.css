@@ -1,0 +1,172 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Timetable styles */
+.timetable {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.timetable-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.timetable-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Activities styles */
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background-color: #ffc107;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.activity-list li:hover {
+    background-color: #ffca28;
+}
+
+/* Add Assignment styles */
+.add-assignment {
+    margin-bottom: 20px;
+}
+
+.add-assignment label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.add-assignment input[type="text"],
+.add-assignment input[type="date"],
+.add-assignment button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add-assignment button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-assignment button:hover {
+    background-color: #45a049;
+}
+
+/* Queries styles */
+.queries {
+    margin-bottom: 20px;
+}
+
+.queries input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.queries button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.queries button:hover {
+    background-color: #0056b3;
+}
+
+#queryResult {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+/* CSS for drag and drop functionality */
+.activity-list {
+    list-style: none;
+    padding: 0;
+    border: 2px dashed #ccc; /* Add a dashed border to indicate drop area */
+    border-radius: 5px;
+    min-height: 100px; /* Set a minimum height for the drop area */
+}
+
+.activity-list li {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+.activity-list li.dragged {
+    opacity: 0.5; /* Reduced opacity while dragging */
+}
+
+.activity-list li:hover {
+    background-color: #f0f0f0; /* Highlight when hovered */
+}
+/* CSS for file upload */
+#assignmentFile {
+    display: none; /* Hide the default file input */
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+}

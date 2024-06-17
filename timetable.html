@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Timetable Management</title>
+    <link rel="stylesheet" href="timetable.css">
+    <style>
+        .dragged {
+            opacity: 0.5; /* Reduced opacity while dragging */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Timetable Management</h1>
+        <div class="timetable">
+            <!-- Timetable will be dynamically generated here -->
+        </div>
+        <div class="activities">
+            <h2>Activities</h2>
+            <ul class="activity-list">
+                <!-- Activity items will be dynamically generated here -->
+                <li draggable="true">Activity 1</li>
+                <li draggable="true">Activity 2</li>
+                <li draggable="true">Activity 3</li>
+            </ul>
+        </div>
+        <div class="add-assignment" id="addAssignment">
+            <h2>Add Assignment</h2>
+            <form id="assignmentForm">
+                <label for="assignmentName">Assignment Name:</label>
+                <input type="text" id="assignmentName" name="assignmentName" required>
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate" required>
+                <label for="assignmentFile">Upload File:</label>
+                <input type="file" id="assignmentFile" name="assignmentFile" accept=".pdf,.doc,.docx,.txt" required>
+                <button type="submit">Add Assignment</button>
+            </form>
+        </div>
+        
+        
+        <div class="queries">
+            <h2>Queries</h2>
+            <input type="text" id="queryInput" placeholder="Ask a question...">
+            <button id="queryButton">Ask</button>
+            <div id="queryResult"></div>
+        </div>
+    </div>
+    <script src="timetable.js"></script>
+    <script>
+        const activityList = document.querySelector('.activity-list');
+        let draggedItem = null;
+
+        activityList.addEventListener('dragstart', function(event) {
+            draggedItem = event.target;
+            event.target.classList.add('dragged'); // Apply styling while dragging
+        });
+
+        activityList.addEventListener('dragend', function(event) {
+            event.target.classList.remove('dragged'); // Remove styling after dragging
+            draggedItem = null;
+        });
+
+        activityList.addEventListener('dragover', function(event) {
+            event.preventDefault();
+        });
+
+        activityList.addEventListener('drop', function(event) {
+            event.preventDefault();
+            if (event.target.classList.contains('activity-list')) {
+                event.target.appendChild(draggedItem);
+            }
+        });
+    </script>
+</body>
+</html>
